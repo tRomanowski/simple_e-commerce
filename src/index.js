@@ -10,8 +10,10 @@ import { UserProvider } from './context/user_context';
 import { Auth0Provider } from '@auth0/auth0-react';
 
 ReactDOM.render(
-	<BrowserRouter>
-		<App />
-	</BrowserRouter>,
+	<ProductsProvider>
+		<BrowserRouter>
+			<App />
+		</BrowserRouter>
+	</ProductsProvider>,
 	document.getElementById('root')
 );
