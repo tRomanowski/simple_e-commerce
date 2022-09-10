@@ -10,7 +10,7 @@ const FeaturedProducts = () => {
 	const {
 		products_loading: loading,
 		products_error: error,
-		feutured_products: featured,
+		featured_products: featured,
 	} = useProductsContext();
 
 	if (loading) {
@@ -21,7 +21,19 @@ const FeaturedProducts = () => {
 		return <Error />;
 	}
 
-	return <h4>featured products</h4>;
+	return (
+		<Wrapper className='section'>
+			<div className='title'>
+				<h2>featured products</h2>
+				<div className='underline'></div>
+			</div>
+			<div className='section-center featured'>
+				{featured.slice(0, 3).map((product) => {
+					return <Product key={product.is} {...product} />;
+				})}
+			</div>
+		</Wrapper>
+	);
 };
 
 const Wrapper = styled.section`
