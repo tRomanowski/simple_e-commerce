@@ -40,14 +40,14 @@ const products_reducer = (state, action) => {
 			single_product_error: false,
 		};
 	}
-	if (action.type === GET_PRODUCTS_SUCCESS) {
+	if (action.type === GET_SINGLE_PRODUCT_SUCCESS) {
 		return {
 			...state,
 			single_product_loading: false,
 			single_product: action.payload,
 		};
 	}
-	if (action.type === GET_PRODUCTS_ERROR) {
+	if (action.type === GET_SINGLE_PRODUCT_ERROR) {
 		return {
 			...state,
 			single_product_loading: false,
