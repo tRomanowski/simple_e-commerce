@@ -10,10 +10,12 @@ import { UserProvider } from './context/user_context';
 import { Auth0Provider } from '@auth0/auth0-react';
 
 ReactDOM.render(
-	<ProductsProvider>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
-	</ProductsProvider>,
+	<React.StrictMode>
+		<ProductsProvider>
+			<BrowserRouter>
+				<App />
+			</BrowserRouter>
+		</ProductsProvider>
+	</React.StrictMode>,
 	document.getElementById('root')
 );
