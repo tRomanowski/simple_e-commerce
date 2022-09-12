@@ -12,9 +12,11 @@ import { Auth0Provider } from '@auth0/auth0-react';
 ReactDOM.render(
 	<React.StrictMode>
 		<ProductsProvider>
-			<BrowserRouter>
-				<App />
-			</BrowserRouter>
+			<FilterProvider>
+				<BrowserRouter>
+					<App />
+				</BrowserRouter>
+			</FilterProvider>
 		</ProductsProvider>
 	</React.StrictMode>,
 	document.getElementById('root')
