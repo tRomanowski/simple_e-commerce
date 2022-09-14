@@ -13,7 +13,7 @@ const filter_reducer = (state, action) => {
 	if (action.type === LOAD_PRODUCTS) {
 		let maxPrice = action.payload.map((product) => product.price);
 		maxPrice = Math.max(...maxPrice);
-		console.log(maxPrice);
+
 		return {
 			...state,
 			all_products: [...action.payload],
@@ -67,6 +67,7 @@ const filter_reducer = (state, action) => {
 		};
 	}
 	if (action.type === FILTER_PRODUCTS) {
+		console.log('filter');
 		return { ...state };
 	}
 	throw new Error(`No Matching "${action.type}" - action type`);

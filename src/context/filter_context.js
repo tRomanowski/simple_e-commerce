@@ -21,7 +21,7 @@ const initialState = {
 		text: '',
 		company: 'all',
 		category: 'all',
-		colors: 'all',
+		color: 'all',
 		min_price: 0,
 		max_price: 0,
 		price: 0,
@@ -60,6 +60,12 @@ export const FilterProvider = ({ children }) => {
 	const updateFilters = (e) => {
 		let value = e.target.value;
 		let name = e.target.name;
+		if (name === 'category') {
+			value = e.target.textContent;
+		}
+		if (name === 'color') {
+			value = e.target.dataset.color;
+		}
 		dispatch({ type: UPDATE_FILTERS, payload: { value, name } });
 	};
 
